@@ -4,6 +4,11 @@ function play(){
     continueGame()
 }
 
+function gameOver(){
+    hideElementById('play-Ground');
+    showElementById('final-score');
+}
+
 function continueGame(){
 const alphabet = getRandomAlphabet();
 console.log(alphabet);
@@ -56,7 +61,9 @@ function handleByKeyboardPress(){
         setTextElementValueById('current-life', updateLife);
         
 
-
+        if(updateLife === 0){
+           gameOver()
+        }
 
         // ------------------------------------------------
         // console.log('you lost a life')
