@@ -12,12 +12,19 @@ function play(){
 function gameOver(){
     hideElementById('play-Ground');
     showElementById('final-score');
+
+    const score = getTextElementValueById('current-score');
+    console.log(score)
+    setTextElementValueById('score', score)
+
+    const currentAlphabet = getElementTextById('current-alphabet');
+    removeBackgroundColor(currentAlphabet)
 }
 
 function continueGame(){
 const alphabet = getRandomAlphabet();
 console.log(alphabet);
-const currentAlphabetElement = document.getElementById('current-operand');
+const currentAlphabetElement = document.getElementById('current-alphabet');
 currentAlphabetElement.innerText = alphabet;
 setBackgroundColor(alphabet)
 
@@ -27,7 +34,7 @@ function handleByKeyboardPress(){
     const playerPressed = event.key;
     // console.log('player pressed', playerPressed)
 
-    const currentAlphabetElement = document.getElementById('current-operand');
+    const currentAlphabetElement = document.getElementById('current-alphabet');
     const currentAlphabet = currentAlphabetElement.innerText;
     const expectAlphabet = currentAlphabet.toLowerCase();
     // console.log(playerPressed, expendAlphabet)
