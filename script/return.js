@@ -32,6 +32,10 @@ setBackgroundColor(alphabet)
 
 function handleByKeyboardPress(){
     const playerPressed = event.key;
+
+    if(playerPressed === 'Escape'){
+        gameOver()
+    }
     // console.log('player pressed', playerPressed)
 
     const currentAlphabetElement = document.getElementById('current-alphabet');
