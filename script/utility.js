@@ -11,6 +11,17 @@ function showElementById(elementId){
 
 function getRandomAlphabet(){
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
-    const alphabet = alphabetString.split('');
-    console.log(alphabet)
+    const alphabets = alphabetString.split('');
+
+    const randomNumber = Math.random()*25;
+    const index = Math.round(randomNumber);
+
+    const alphabet = alphabets[index];
+    // console.log(alphabet)
+    return alphabet;
+}
+
+function setBackgroundColor(elementId){
+    const element = document.getElementById(elementId);
+    element.classList.add('bg-orange-400')
 }
