@@ -1,6 +1,11 @@
 function play(){
     hideElementById('home-screen');
+    hideElementById('final-score');
     showElementById('play-Ground');
+
+    setTextElementValueById('current-score', 0);
+    setTextElementValueById('current-life', 5);
+
     continueGame()
 }
 
