@@ -5,18 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alphabet Game</title>
+    <!-- --------------------------------------------------------------------------- -->
+    <!-- Google Font here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@100..900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- --------------------------------------------------------------------------- -->
     <!-- Daisy Ui section link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<style>
+    .font-poppins {
+        font-family: "Poppins", sans-serif;
+    }
 
-<body>
+    .font-anton {
+        font-family: "Anton", sans-serif;
+    }
+
+    .font-inter {
+        font-family: "Inter", sans-serif;
+    }
+</style>
+
+<body class="font-poppins ">
     <main class="min-h-screen bg-[#010313] bg-[url(/images/background.png)] bg-no-repeat bg-center">
         <!-- Home Section -->
         <section id="home-screen">
             <div class="text-white flex flex-col justify-center text-center items-center min-h-screen gap-10">
-                <h1 class="text-9xl ">ALPHABET CLASH</h1>
-                <p class="text-2xl font-medium">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+                <h1 class="text-9xl font-anton ">ALPHABET CLASH</h1>
+                <p class="text-xl font-medium">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
                 <button onclick="play()" class="btn">Play Now</button>
             </div>
         </section>
@@ -26,7 +47,9 @@
             <div class="border-[16px] rounded-xl border-black w-[1100px] text-center absolute top-12 left-32">
                 <div class="artboard artboard-horizontal h-56 bg-[#FFFFFFB3]">
                     <div>
-                        <p class="text-xl text-white font-bold bg-[#2F2941] w-[480px] p-4 text-center absolute left-[300px]">Don't watch keyboard  while playing...</p>
+                        <p
+                            class="text-xl text-white font-bold bg-[#2F2941] w-[480px] p-4 text-center absolute left-[300px]">
+                            Don't watch keyboard while playing...</p>
                     </div>
                     <div class=" h-full flex flex-col justify-center items-center">
                         <p id="current-alphabet" class="text-9xl text-black mt-8 uppercase">A</p>
@@ -46,8 +69,8 @@
                     <kbd id="i" class="kbd">i</kbd>
                     <kbd id="o" class="kbd">o</kbd>
                     <kbd id="p" class="kbd">p</kbd>
-                  </div> 
-                  <div class="flex justify-center gap-1 my-1 w-full">
+                </div>
+                <div class="flex justify-center gap-1 my-1 w-full">
                     <kbd id="a" class="kbd">a</kbd>
                     <kbd id="s" class="kbd">s</kbd>
                     <kbd id="d" class="kbd">d</kbd>
@@ -57,8 +80,8 @@
                     <kbd id="j" class="kbd">j</kbd>
                     <kbd id="k" class="kbd">k</kbd>
                     <kbd id="l" class="kbd">l</kbd>
-                  </div> 
-                  <div class="flex justify-center gap-1 my-1 w-full">
+                </div>
+                <div class="flex justify-center gap-1 my-1 w-full">
                     <kbd id="z" class="kbd">z</kbd>
                     <kbd id="x" class="kbd">x</kbd>
                     <kbd id="c" class="kbd">c</kbd>
@@ -67,15 +90,18 @@
                     <kbd id="n" class="kbd">n</kbd>
                     <kbd id="m" class="kbd">m</kbd>
                     <kbd id="/" class="kbd">/</kbd>
-                  </div>
+                </div>
             </div>
             <!-- health score -->
-            <div class="flex justify-between items-end pb-20 px-20 border-2 min-h-screen ">
+            <div class="flex justify-between items-end pb-20 px-20 min-h-screen ">
                 <!-- display Life -->
-                <button class="btn bg-[#894189] rounded-full text-white ">Life: <img src="logo/heaart.svg" alt="">
+                <button class="btn bg-[#894189] rounded-full text-white font-inter ">Life: <img src="logo/heaart.svg"
+                        alt="">
                     <span id="current-life">5</span></button>
                 <!-- display Score -->
-                <button class="btn bg-[#894189] rounded-full text-white ">Score:<img src="logo/monetization.svg" alt=""> <span id="current-score">0</span></button>
+                <button class="btn bg-[#894189] rounded-full text-white font-inter">Score:<img
+                        src="logo/monetization.svg" alt="">
+                    <span id="current-score">0</span></button>
             </div>
         </section>
         <!--Final Score section -->
@@ -83,7 +109,8 @@
             <div>
                 <h3 class="text-6xl text-white  flex justify-center pt-20">Game over !</h3>
             </div>
-            <div class="border-2 w-96 h-80 gap-4 flex flex-col justify-center text-center items-center bg-gradient-to-r from-pink-500 to-blue-400 absolute  left-[480px] bottom-10">
+            <div
+                class="border-2 w-96 h-80 gap-4 flex flex-col justify-center text-center items-center bg-gradient-to-r from-pink-500 to-blue-400 absolute  left-[480px] bottom-10">
                 <p class="text-white text-6xl"><span class="font-bold">Score: </span><span id="score">0</span></p>
                 <button onclick="play()" class="btn">Play Again</button>
                 <p class="text-white font-medium">Practice will make you Pro</p>
